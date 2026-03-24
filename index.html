@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>GKM Afrika Trading | African Craft & Culture Exports</title>
+  <!-- Google Fonts + simple reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FCF7EF;   /* warm sand base */
+      color: #2C221B;
+      scroll-behavior: smooth;
+    }
+
+    /* earthy brown theme palette */
+    :root {
+      --earth-dark: #4A3729;
+      --earth-deep: #5E3E2C;
+      --earth-terra: #7C5A42;
+      --earth-clay: #9B6E4C;
+      --earth-sand: #D9C2A7;
+      --earth-cream: #F4ECE1;
+      --earth-accent: #B87C4E;
+      --shadow-warm: rgba(74, 55, 41, 0.08);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header */
+    .header {
+      background: #FEF9F0;
+      border-bottom: 1px solid #EADBCE;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(2px);
+      background-color: rgba(254, 249, 240, 0.96);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #4A3729 0%, #7C5A42 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .logo p {
+      font-size: 0.75rem;
+      color: #7C5A42;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--earth-dark);
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--earth-accent);
+      border-bottom: 2px solid var(--earth-accent);
+      padding-bottom: 4px;
+    }
+
+    /* hero */
+    .hero {
+      padding: 4rem 0 3rem;
+      text-align: center;
+      background: radial-gradient(circle at 80% 20%, rgba(210, 170, 130, 0.08), transparent);
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--earth-deep);
+      line-height: 1.2;
+      max-width: 900px;
+      margin: 0 auto 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #5E4B3A;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero-accent {
+      width: 100px;
+      height: 4px;
+      background: var(--earth-clay);
+      margin: 1.5rem auto 0;
+      border-radius: 4px;
+    }
+
+    /* product cards */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 3rem 0 1.8rem;
+      color: #3B2A1F;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60%;
+      height: 3px;
+      background: var(--earth-terra);
+      border-radius: 2px;
+    }
+
+    .products-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .product-card {
+      background: #FFFFFFE6;
+      backdrop-filter: blur(2px);
+      border-radius: 32px;
+      padding: 2rem 1.5rem;
+      flex: 1 1 280px;
+      box-shadow: 0 12px 28px var(--shadow-warm);
+      transition: all 0.25s ease;
+      border: 1px solid #E9DDD0;
+      text-align: center;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(74, 55, 41, 0.2);
+      border-color: var(--earth-sand);
+    }
+
+    .icon-emblem {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .product-card h3 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #4E3524;
+      margin-bottom: 0.75rem;
+    }
+
+    .product-card p {
+      color: #5F4A38;
+      line-height: 1.4;
+      font-size: 0.95rem;
+    }
+
+    .origin-tag {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--earth-clay);
+    }
+
+    /* mission section - rich earth tone */
+    .mission {
+      background: #EFE2D4;
+      border-radius: 48px;
+      margin: 4rem 0;
+      padding: 3rem 2.5rem;
+      box-shadow: inset 0 1px 4px rgba(255,255,240,0.8), 0 12px 20px rgba(0,0,0,0.02);
+    }
+
+    .mission h3 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: #3E2A1C;
+      margin-bottom: 1.5rem;
+    }
+
+    .mission p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2F241C;
+      max-width: 85%;
+    }
+
+    /* contact + locations */
+    .contact-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin: 3rem 0 4rem;
+      background: #FCF5EA;
+      border-radius: 40px;
+      padding: 2rem;
+    }
+
+    .contact-info {
+      flex: 1.2;
+    }
+
+    .contact-info h3, .locations h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #4A3322;
+      margin-bottom: 1rem;
+    }
+
+    .contact-detail {
+      margin: 1.2rem 0;
+    }
+
+    .contact-detail p {
+      margin: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      color: #2F241C;
+      word-break: break-word;
+    }
+
+    .contact-icon {
+      font-size: 1.3rem;
+      min-width: 32px;
+    }
+
+    .email-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.3rem;
+    }
+
+    .email-badge {
+      background: #EADCCE;
+      padding: 0.3rem 1rem;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #4E3625;
+    }
+
+    .locations {
+      flex: 1;
+    }
+
+    .location-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.8rem;
+    }
+
+    .loc-item {
+      background: #EBDDCFFF;
+      padding: 0.5rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    /* footer */
+    .footer {
+      background: #3C2A1E;
+      color: #EADBCE;
+      padding: 2rem 0;
+      border-radius: 32px 32px 0 0;
+      margin-top: 2rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    .footer small {
+      font-size: 0.8rem;
+    }
+
+    /* responsiveness */
+    @media (max-width: 760px) {
+      .container {
+        padding: 0 24px;
+      }
+      .nav {
+        flex-direction: column;
+      }
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+      .mission p {
+        max-width: 100%;
+      }
+      .contact-section {
+        flex-direction: column;
+      }
+      .section-title:after {
+        width: 40%;
+      }
+    }
+
+    button, a {
+      cursor: pointer;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, #DCCBB8, transparent);
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="nav">
+        <div class="logo">
+          <h1>GKM Afrika Trading</h1>
+          <p>roots of excellence · heart of congo</p>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#products">Treasures</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#contact">Connect</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Hero section -->
+      <div class="hero">
+        <h2>Export African Craft & Culture<br>where heritage meets global trade</h2>
+        <p>Premium African hardwoods · Celebration-ready Bazin fabrics · Fresh tropical harvests</p>
+        <div class="hero-accent"></div>
+      </div>
+
+      <!-- Products section (African Clothes, Wood, Tropical Fruits) -->
+      <div id="products">
+        <span class="section-title">Our exports · pure origin</span>
+        <div class="products-grid">
+          <!-- African Clothes card -->
+          <div class="product-card">
+            <div class="icon-emblem">👘✨</div>
+            <h3>African Clothes</h3>
+            <p><strong>Bazin (1st Quality)</strong> from West Africa. Celebration-ready fabrics rooted in culture. Rich textures, vibrant symbolism, authentic craftsmanship.</p>
+            <div class="origin-tag">🇨🇩🇳🇬 West Africa heritage</div>
+          </div>
+          <!-- Wood card -->
+          <div class="product-card">
+            <div class="icon-emblem">🌳🔨</div>
+            <h3>Premium Hardwoods</h3>
+            <p><strong>Tola, Kambala, Wenge, Red & Black Wood</strong> from D.R. Congo. Sourced responsibly — timeless elegance for furniture, sculpture & architecture.</p>
+            <div class="origin-tag">🇨🇩 Democratic Republic of Congo</div>
+          </div>
+          <!-- Tropical Fruits card -->
+          <div class="product-card">
+            <div class="icon-emblem">🍍🥭🍌</div>
+            <h3>Tropical Fruits</h3>
+            <p><strong>Pineapples, Mangoes, Plantain & more.</strong> Fresh, seasonal, responsibly sourced. Sun-ripened flavors delivered with integrity.</p>
+            <div class="origin-tag">🌍 fresh from Congolese soil</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission: deeper purpose with brown earth tones -->
+      <div id="mission" class="mission">
+        <h3>🌍 Our reason for being</h3>
+        <p>Our reason for being is not only to conduct business and benefit from it, but also to bring together business people from all corners of the world with the Democratic Republic of Congo, our mother nation, for joint business and mutual investment projects. The outcomes of these connections will also help develop our businesses, enabling us to support those who reach out to us, especially the most vulnerable people living in the most remote areas, by providing them with our assistance.</p>
+      </div>
+
+      <!-- Contact + Locations combined -->
+      <div id="contact" class="contact-section">
+        <div class="contact-info">
+          <h3>📞 Connect with us</h3>
+          <div class="contact-detail">
+            <p><span class="contact-icon">📱</span> Phone: <strong>+27 72 276 5899</strong></p>
+            <p><span class="contact-icon">✉️</span> Email:</p>
+            <div class="email-group">
+              <span class="email-badge">gkmafrikat@outlook.com</span>
+              <span class="email-badge">info@gkmtrading.com</span>
+              <span class="email-badge">mamuessa@gmail.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="locations">
+          <h3>📍 Our presence</h3>
+          <div class="location-grid">
+            <span class="loc-item">🇿🇦 Cape Town</span>
+            <span class="loc-item">🌍 West Africa</span>
+            <span class="loc-item">🇨🇩 D.R. Congo</span>
+            <span class="loc-item">🤝 Global Partners</span>
+          </div>
+          <p style="margin-top: 1.2rem; font-size: 0.85rem; color:#5E4A38;">Bridging continents — rooted in Congo, serving the world.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>🌿 GKM Afrika Trading — Export African Craft & Culture</p>
+      <small>GKM Afrika Trading @ 2025 - Powered by SweetBiscuit44</small>
+    </div>
+  </footer>
+
+  <!-- subtle smoothing + decorative (no external) -->
+</body>
+</html>
