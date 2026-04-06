@@ -6,11 +6,7 @@
   <title>GKM Afrika Trading | African Craft & Culture Exports</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -20,508 +16,243 @@
     }
 
     :root {
-      --earth-dark: #4A3729;
-      --earth-deep: #5E3E2C;
-      --earth-terra: #7C5A42;
-      --earth-clay: #9B6E4C;
-      --earth-sand: #D9C2A7;
-      --earth-cream: #F4ECE1;
+      --earth-dark:   #4A3729;
+      --earth-deep:   #5E3E2C;
+      --earth-terra:  #7C5A42;
+      --earth-clay:   #9B6E4C;
+      --earth-sand:   #D9C2A7;
+      --earth-cream:  #F4ECE1;
       --earth-accent: #B87C4E;
-      --shadow-warm: rgba(74, 55, 41, 0.08);
+      --shadow-warm:  rgba(74,55,41,0.08);
     }
 
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
-    /* header */
+    /* HEADER */
     .header {
-      background: #FEF9F0;
+      background: rgba(254,249,240,0.96);
       border-bottom: 1px solid #EADBCE;
       padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      position: sticky; top: 0; z-index: 50;
       backdrop-filter: blur(2px);
-      background-color: rgba(254, 249, 240, 0.96);
     }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
+    .nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
     .logo h1 {
-      font-size: 1.8rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #4A3729 0%, #7C5A42 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
+      font-size:1.8rem; font-weight:600; letter-spacing:-0.02em;
+      background:linear-gradient(135deg,#4A3729 0%,#7C5A42 100%);
+      background-clip:text; -webkit-background-clip:text; color:transparent;
     }
-
-    .logo p {
-      font-size: 0.75rem;
-      color: #7C5A42;
-      letter-spacing: 1px;
-      font-weight: 500;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
+    .logo p { font-size:0.75rem; color:#7C5A42; letter-spacing:1px; font-weight:500; }
+    .nav-links { display:flex; gap:2rem; list-style:none; }
     .nav-links a {
-      text-decoration: none;
-      font-weight: 500;
-      color: var(--earth-dark);
-      transition: 0.2s;
-      font-size: 0.95rem;
+      text-decoration:none; font-weight:500; color:var(--earth-dark);
+      transition:0.2s; font-size:0.95rem;
     }
+    .nav-links a:hover { color:var(--earth-accent); border-bottom:2px solid var(--earth-accent); padding-bottom:4px; }
 
-    .nav-links a:hover {
-      color: var(--earth-accent);
-      border-bottom: 2px solid var(--earth-accent);
-      padding-bottom: 4px;
-    }
-
-    /* hero */
+    /* HERO */
     .hero {
-      padding: 4rem 0 2rem;
-      text-align: center;
-      background: radial-gradient(circle at 80% 20%, rgba(210, 170, 130, 0.08), transparent);
+      padding:4rem 0 2rem; text-align:center;
+      background:radial-gradient(circle at 80% 20%,rgba(210,170,130,0.08),transparent);
     }
+    .hero h2 { font-size:3rem; font-weight:700; color:var(--earth-deep); line-height:1.2; max-width:900px; margin:0 auto 1rem; }
+    .hero p   { font-size:1.2rem; color:#5E4B3A; max-width:680px; margin:0 auto; }
+    .hero-accent { width:100px; height:4px; background:var(--earth-clay); margin:1.5rem auto 0; border-radius:4px; }
 
-    .hero h2 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--earth-deep);
-      line-height: 1.2;
-      max-width: 900px;
-      margin: 0 auto 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #5E4B3A;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .hero-accent {
-      width: 100px;
-      height: 4px;
-      background: var(--earth-clay);
-      margin: 1.5rem auto 0;
-      border-radius: 4px;
-    }
-
-    /* ── HERO BANNER STRIP (A, B, C) ── */
+    /* HERO IMAGE STRIP — A B C */
     .hero-image-strip {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 12px;
-      margin: 2rem 0 3rem;
-      border-radius: 24px;
-      overflow: hidden;
-      height: 340px;
+      display:grid; grid-template-columns:1.4fr 1fr 1fr;
+      gap:12px; margin:2rem 0 3rem;
+      border-radius:24px; overflow:hidden; height:340px;
     }
+    .hero-image-strip img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s; }
+    .hero-image-strip img:hover { transform:scale(1.03); }
 
-    .hero-image-strip img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .hero-image-strip img:hover {
-      transform: scale(1.03);
-    }
-
-    /* product cards */
+    /* SECTION TITLE */
     .section-title {
-      font-size: 2rem;
-      font-weight: 600;
-      margin: 3rem 0 1.8rem;
-      color: #3B2A1F;
-      position: relative;
-      display: inline-block;
+      font-size:2rem; font-weight:600; margin:3rem 0 1.8rem;
+      color:#3B2A1F; position:relative; display:inline-block;
     }
     .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60%;
-      height: 3px;
-      background: var(--earth-terra);
-      border-radius: 2px;
+      content:''; position:absolute; bottom:-10px; left:0;
+      width:60%; height:3px; background:var(--earth-terra); border-radius:2px;
     }
 
-    .products-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      margin-bottom: 2rem;
-    }
-
+    /* PRODUCT CARDS */
+    .products-grid { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; margin-bottom:3rem; }
     .product-card {
-      background: #FFFFFFE6;
-      backdrop-filter: blur(2px);
-      border-radius: 32px;
-      padding: 2rem 1.5rem;
-      flex: 1 1 280px;
-      box-shadow: 0 12px 28px var(--shadow-warm);
-      transition: all 0.25s ease;
-      border: 1px solid #E9DDD0;
-      text-align: center;
+      background:#FFFFFFE6; backdrop-filter:blur(2px);
+      border-radius:32px; padding:2rem 1.5rem; flex:1 1 280px;
+      box-shadow:0 12px 28px var(--shadow-warm);
+      transition:all 0.25s ease; border:1px solid #E9DDD0; text-align:center;
+    }
+    .product-card:hover { transform:translateY(-6px); box-shadow:0 20px 30px -12px rgba(74,55,41,0.2); border-color:var(--earth-sand); }
+    .icon-emblem { font-size:2.8rem; margin-bottom:1rem; }
+    .product-card h3 { font-size:1.7rem; font-weight:600; color:#4E3524; margin-bottom:0.75rem; }
+    .product-card p  { color:#5F4A38; line-height:1.4; font-size:0.95rem; }
+    .origin-tag { margin-top:1rem; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:1px; color:var(--earth-clay); }
+
+    /* ══════════════════════════════════════════
+       WOOD FOR SALE SECTION
+    ══════════════════════════════════════════ */
+    .wood-section {
+      background: linear-gradient(160deg, #2E1C10 0%, #4A2E1C 50%, #6B4226 100%);
+      border-radius: 36px;
+      padding: 2.8rem 2.8rem 2.2rem;
+      margin: 1rem 0 4rem;
+      box-shadow: 0 20px 48px rgba(30,15,5,0.3);
+      position: relative; overflow: hidden;
     }
 
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 30px -12px rgba(74, 55, 41, 0.2);
-      border-color: var(--earth-sand);
+    /* header row */
+    .wood-header {
+      display:flex; align-items:flex-start; gap:1.2rem;
+      margin-bottom:2rem;
+    }
+    .wood-header-icon { font-size:2.6rem; flex-shrink:0; margin-top:4px; }
+    .wood-label {
+      font-size:0.75rem; font-weight:700; letter-spacing:2.5px;
+      text-transform:uppercase; color:#B87C4E; margin-bottom:0.4rem;
+    }
+    .wood-header h3 {
+      font-size:1.65rem; font-weight:700; color:#F5DEB3;
+      line-height:1.25; margin-bottom:0.65rem;
+    }
+    .wood-header p {
+      font-size:0.97rem; color:#D8C4AD; line-height:1.65; max-width:700px;
+    }
+    .wood-header strong { color:#FFD9A8; }
+
+    .wood-cta {
+      display:inline-block; margin-top:1.1rem;
+      background:#B87C4E; color:#FFF8F0; text-decoration:none;
+      padding:0.6rem 1.5rem; border-radius:60px;
+      font-weight:600; font-size:0.9rem;
+      transition:background 0.2s, transform 0.2s;
+    }
+    .wood-cta:hover { background:#D4936A; transform:translateY(-2px); }
+
+    /* SLIDER WRAPPER */
+    .slider-wrap {
+      position:relative; border-radius:20px; overflow:hidden;
+      background:rgba(0,0,0,0.2);
+    }
+    .slider-track {
+      display:flex;
+      transition:transform 0.45s cubic-bezier(0.4,0,0.2,1);
+    }
+    .slide {
+      min-width:100%; height:420px;
+      flex-shrink:0; position:relative;
+    }
+    .slide img { width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* counter badge */
+    .slide-counter {
+      position:absolute; bottom:14px; right:18px;
+      background:rgba(0,0,0,0.55); color:#FFD9A8;
+      font-size:0.78rem; font-weight:600;
+      padding:4px 12px; border-radius:60px; letter-spacing:1px;
+      backdrop-filter:blur(4px);
     }
 
-    .icon-emblem {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
+    /* arrow buttons */
+    .slider-btn {
+      position:absolute; top:50%; transform:translateY(-50%);
+      width:46px; height:46px;
+      background:rgba(20,10,0,0.6);
+      border:1px solid rgba(184,124,78,0.45);
+      border-radius:50%; color:#F5DEB3;
+      font-size:1.2rem; cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      transition:background 0.2s, transform 0.2s;
+      z-index:10; backdrop-filter:blur(4px);
+      user-select:none;
     }
+    .slider-btn:hover { background:rgba(184,124,78,0.75); transform:translateY(-50%) scale(1.08); }
+    .slider-btn.prev { left:14px; }
+    .slider-btn.next { right:14px; }
 
-    .product-card h3 {
-      font-size: 1.7rem;
-      font-weight: 600;
-      color: #4E3524;
-      margin-bottom: 0.75rem;
+    /* dot strip */
+    .slider-dots {
+      display:flex; justify-content:center; gap:8px; margin-top:1.1rem;
     }
-
-    .product-card p {
-      color: #5F4A38;
-      line-height: 1.4;
-      font-size: 0.95rem;
+    .slider-dot {
+      width:8px; height:8px; border-radius:50%;
+      background:rgba(255,210,150,0.3); cursor:pointer;
+      border:none; transition:background 0.25s, transform 0.25s;
     }
+    .slider-dot.active { background:#B87C4E; transform:scale(1.4); }
 
-    .origin-tag {
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--earth-clay);
+    /* thumbnail strip */
+    .thumb-strip {
+      display:flex; gap:8px; margin-top:10px;
+      overflow-x:auto; padding-bottom:4px;
+      scrollbar-width:none;
     }
-
-    /* ── PRODUCT GALLERY (D, E, F, G) ── */
-    .product-gallery {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin: 0 0 3rem;
-      border-radius: 20px;
-      overflow: hidden;
-      height: 220px;
+    .thumb-strip::-webkit-scrollbar { display:none; }
+    .thumb {
+      flex-shrink:0; width:72px; height:52px;
+      border-radius:8px; overflow:hidden; cursor:pointer;
+      border:2px solid transparent;
+      transition:border-color 0.2s, opacity 0.2s;
+      opacity:0.55;
     }
+    .thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+    .thumb.active { border-color:#B87C4E; opacity:1; }
 
-    .product-gallery img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease, filter 0.3s ease;
-      filter: saturate(0.9);
-    }
-
-    .product-gallery img:hover {
-      transform: scale(1.05);
-      filter: saturate(1.2);
-    }
-
-    /* gallery label strip */
-    .gallery-label {
-      text-align: center;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--earth-clay);
-      margin: -1.5rem 0 2.5rem;
-    }
-
-    /* ── WOOD FOR SALE BANNER ── */
-    .wood-sale-banner {
-      background: linear-gradient(135deg, #3E2A1A 0%, #5E3E2C 60%, #7C5A42 100%);
-      border-radius: 28px;
-      padding: 2rem 2.5rem;
-      margin: 0 0 3.5rem;
-      box-shadow: 0 16px 32px rgba(62, 42, 26, 0.25);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .wood-sale-banner::before {
-      content: '';
-      position: absolute;
-      top: -40px;
-      right: -40px;
-      width: 180px;
-      height: 180px;
-      background: rgba(255, 220, 170, 0.06);
-      border-radius: 50%;
-    }
-
-    .wood-sale-inner {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-    }
-
-    .wood-sale-icon {
-      font-size: 2.8rem;
-      line-height: 1;
-      flex-shrink: 0;
-      margin-top: 4px;
-    }
-
-    .wood-sale-text h4 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #F5DEB3;
-      letter-spacing: 0.3px;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 0.85rem;
-    }
-
-    .wood-sale-text p {
-      font-size: 1rem;
-      color: #E8D5C0;
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
-    }
-
-    .wood-sale-text strong {
-      color: #FFD9A8;
-    }
-
-    .wood-sale-cta {
-      display: inline-block;
-      background: #B87C4E;
-      color: #FFF8F0;
-      text-decoration: none;
-      padding: 0.55rem 1.4rem;
-      border-radius: 60px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .wood-sale-cta:hover {
-      background: #D4936A;
-      transform: translateY(-2px);
-    }
-
-    @media (max-width: 760px) {
-      .wood-sale-inner { flex-direction: column; gap: 1rem; }
-      .wood-sale-banner { padding: 1.5rem; }
-    }
-
-    /* mission section */
+    /* MISSION */
     .mission {
-      background: #EFE2D4;
-      border-radius: 48px;
-      margin: 4rem 0;
-      padding: 3rem 2.5rem;
-      box-shadow: inset 0 1px 4px rgba(255,255,240,0.8), 0 12px 20px rgba(0,0,0,0.02);
+      background:#EFE2D4; border-radius:48px; margin:4rem 0; padding:3rem 2.5rem;
+      box-shadow:inset 0 1px 4px rgba(255,255,240,0.8),0 12px 20px rgba(0,0,0,0.02);
     }
+    .mission h3 { font-size:1.9rem; font-weight:600; color:#3E2A1C; margin-bottom:1.5rem; }
+    .mission p  { font-size:1.1rem; line-height:1.6; color:#2F241C; max-width:85%; }
 
-    .mission h3 {
-      font-size: 1.9rem;
-      font-weight: 600;
-      color: #3E2A1C;
-      margin-bottom: 1.5rem;
-    }
-
-    .mission p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #2F241C;
-      max-width: 85%;
-    }
-
-    /* ── CULTURE MOSAIC (H, I, J, K) ── */
-    .culture-mosaic {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1.6fr 1fr;
-      gap: 12px;
-      margin: -1rem 0 4rem;
-      border-radius: 20px;
-      overflow: hidden;
-      height: 200px;
-    }
-
-    .culture-mosaic img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .culture-mosaic img:hover {
-      transform: scale(1.04);
-    }
-
-    /* contact + locations */
+    /* CONTACT */
     .contact-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      margin: 3rem 0 4rem;
-      background: #FCF5EA;
-      border-radius: 40px;
-      padding: 2rem;
+      display:flex; flex-wrap:wrap; gap:3rem; margin:3rem 0 4rem;
+      background:#FCF5EA; border-radius:40px; padding:2rem;
     }
+    .contact-info { flex:1.2; }
+    .contact-info h3, .locations h3 { font-size:1.6rem; font-weight:600; color:#4A3322; margin-bottom:1rem; }
+    .contact-detail { margin:1.2rem 0; }
+    .contact-detail p { margin:0.5rem 0; display:flex; align-items:center; gap:12px; font-size:1rem; color:#2F241C; word-break:break-word; }
+    .contact-icon { font-size:1.3rem; min-width:32px; }
+    .email-group { display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:0.3rem; }
+    .email-badge { background:#EADCCE; padding:0.3rem 1rem; border-radius:60px; font-size:0.85rem; font-weight:500; color:#4E3625; }
+    .locations { flex:1; }
+    .location-grid { display:flex; flex-wrap:wrap; gap:1rem; margin-top:0.8rem; }
+    .loc-item { background:#EBDDCFFF; padding:0.5rem 1.2rem; border-radius:60px; font-weight:500; font-size:0.9rem; }
 
-    .contact-info {
-      flex: 1.2;
-    }
+    /* FOOTER */
+    .footer { background:#3C2A1E; color:#EADBCE; padding:2rem 0; border-radius:32px 32px 0 0; margin-top:2rem; }
+    .footer-inner { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; }
+    .footer p   { font-size:0.9rem; opacity:0.85; }
+    .footer small { font-size:0.8rem; }
 
-    .contact-info h3, .locations h3 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: #4A3322;
-      margin-bottom: 1rem;
-    }
-
-    .contact-detail {
-      margin: 1.2rem 0;
-    }
-
-    .contact-detail p {
-      margin: 0.5rem 0;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 1rem;
-      color: #2F241C;
-      word-break: break-word;
-    }
-
-    .contact-icon {
-      font-size: 1.3rem;
-      min-width: 32px;
-    }
-
-    .email-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 0.3rem;
-    }
-
-    .email-badge {
-      background: #EADCCE;
-      padding: 0.3rem 1rem;
-      border-radius: 60px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #4E3625;
-    }
-
-    .locations {
-      flex: 1;
-    }
-
-    .location-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 0.8rem;
-    }
-
-    .loc-item {
-      background: #EBDDCFFF;
-      padding: 0.5rem 1.2rem;
-      border-radius: 60px;
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
-
-    /* footer */
-    .footer {
-      background: #3C2A1E;
-      color: #EADBCE;
-      padding: 2rem 0;
-      border-radius: 32px 32px 0 0;
-      margin-top: 2rem;
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .footer p {
-      font-size: 0.9rem;
-      opacity: 0.85;
-    }
-
-    .footer small {
-      font-size: 0.8rem;
-    }
-
-    /* responsiveness */
+    /* RESPONSIVE */
     @media (max-width: 760px) {
-      .container { padding: 0 24px; }
-      .nav { flex-direction: column; }
-      .hero h2 { font-size: 2.2rem; }
-      .mission p { max-width: 100%; }
-      .contact-section { flex-direction: column; }
-      .section-title:after { width: 40%; }
-
-      .hero-image-strip {
-        grid-template-columns: 1fr;
-        height: auto;
-      }
-      .hero-image-strip img { height: 200px; }
-
-      .product-gallery {
-        grid-template-columns: repeat(2, 1fr);
-        height: auto;
-      }
-      .product-gallery img { height: 140px; }
-
-      .culture-mosaic {
-        grid-template-columns: repeat(2, 1fr);
-        height: auto;
-      }
-      .culture-mosaic img { height: 130px; }
+      .container { padding:0 20px; }
+      .nav { flex-direction:column; }
+      .hero h2 { font-size:2.2rem; }
+      .mission p { max-width:100%; }
+      .contact-section { flex-direction:column; }
+      .section-title:after { width:40%; }
+      .hero-image-strip { grid-template-columns:1fr; height:auto; }
+      .hero-image-strip img { height:180px; }
+      .wood-section { padding:1.8rem 1.4rem; border-radius:24px; }
+      .wood-header { flex-direction:column; gap:0.8rem; }
+      .slide { height:240px; }
+      .wood-header h3 { font-size:1.3rem; }
     }
 
-    button, a { cursor: pointer; }
-
-    hr {
-      border: none;
-      height: 1px;
-      background: linear-gradient(90deg, #DCCBB8, transparent);
-      margin: 1rem 0;
-    }
+    button, a { cursor:pointer; }
+    hr { border:none; height:1px; background:linear-gradient(90deg,#DCCBB8,transparent); margin:1rem 0; }
   </style>
 </head>
 <body>
+
   <header class="header">
     <div class="container">
       <div class="nav">
@@ -531,6 +262,7 @@
         </div>
         <ul class="nav-links">
           <li><a href="#products">Treasures</a></li>
+          <li><a href="#wood">Wood for Sale</a></li>
           <li><a href="#mission">Mission</a></li>
           <li><a href="#contact">Connect</a></li>
         </ul>
@@ -541,21 +273,21 @@
   <main>
     <div class="container">
 
-      <!-- Hero section -->
+      <!-- Hero -->
       <div class="hero">
         <h2>Export African Craft & Culture<br>where heritage meets global trade</h2>
         <p>Premium African hardwoods · Celebration-ready Bazin fabrics · Fresh tropical harvests</p>
         <div class="hero-accent"></div>
       </div>
 
-      <!-- ── HERO IMAGE STRIP: A, B, C ── -->
+      <!-- Hero strip: A B C -->
       <div class="hero-image-strip">
-        <img src="A.jpg" alt="African export – A">
-        <img src="B.jpg" alt="African export – B">
-        <img src="C.jpg" alt="African export – C">
+        <img src="A.jpg" alt="African craft export">
+        <img src="B.jpg" alt="African heritage goods">
+        <img src="C.jpg" alt="Congo exports">
       </div>
 
-      <!-- Products section -->
+      <!-- Product cards -->
       <div id="products">
         <span class="section-title">Our exports · pure origin</span>
         <div class="products-grid">
@@ -580,42 +312,64 @@
         </div>
       </div>
 
-      <!-- ── PRODUCT GALLERY: D, E, F, G ── -->
-      <div class="product-gallery">
-        <img src="D.jpg" alt="Product showcase – D">
-        <img src="E.jpg" alt="Product showcase – E">
-        <img src="F.jpg" alt="Product showcase – F">
-        <img src="G.jpg" alt="Product showcase – G">
-      </div>
-      <p class="gallery-label">— Crafted in Africa · Delivered to the World —</p>
+      <!-- ══ WOOD FOR SALE ══ -->
+      <div id="wood" class="wood-section">
 
-      <!-- ── WOOD FOR SALE CALLOUT ── -->
-      <div class="wood-sale-banner">
-        <div class="wood-sale-inner">
-          <span class="wood-sale-icon">🪵</span>
-          <div class="wood-sale-text">
-            <h4>Wood Pieces Available — Now Selling</h4>
-            <p>We currently have a selection of premium African hardwood pieces available for direct purchase — including <strong>Tola, Kambala, Wenge, Red Wood and Black Wood</strong>. Ideal for furniture makers, sculptors, architects, and collectors. If you're interested in acquiring any of these pieces, we'd love to hear from you.</p>
-            <a href="#contact" class="wood-sale-cta">📩 Contact us to enquire</a>
+        <div class="wood-header">
+          <span class="wood-header-icon">🪵</span>
+          <div>
+            <p class="wood-label">Now Available · Direct Purchase</p>
+            <h3>We Are Selling Premium Wood Pieces</h3>
+            <p>
+              We currently have a hand-selected collection of authentic African hardwood pieces available for
+              direct purchase — including <strong>Tola, Kambala, Wenge, Red Wood and Black Wood</strong>,
+              all sourced directly from the Democratic Republic of Congo. Ideal for furniture makers, sculptors,
+              architects, and serious collectors. Browse the pieces below and reach out if anything interests you.
+            </p>
+            <a href="#contact" class="wood-cta">📩 Enquire about a piece</a>
           </div>
         </div>
-      </div>
 
-      <!-- Mission section -->
+        <!-- Slider: D E F G H I J K -->
+        <div class="slider-wrap" id="sliderWrap">
+          <div class="slider-track" id="sliderTrack">
+            <div class="slide"><img src="D.jpg" alt="Wood piece D"><span class="slide-counter" id="slideCounter">1 / 8</span></div>
+            <div class="slide"><img src="E.jpg" alt="Wood piece E"></div>
+            <div class="slide"><img src="F.jpg" alt="Wood piece F"></div>
+            <div class="slide"><img src="G.jpg" alt="Wood piece G"></div>
+            <div class="slide"><img src="H.jpg" alt="Wood piece H"></div>
+            <div class="slide"><img src="I.jpg" alt="Wood piece I"></div>
+            <div class="slide"><img src="J.jpg" alt="Wood piece J"></div>
+            <div class="slide"><img src="K.jpg" alt="Wood piece K"></div>
+          </div>
+          <button class="slider-btn prev" id="prevBtn" aria-label="Previous">&#8592;</button>
+          <button class="slider-btn next" id="nextBtn" aria-label="Next">&#8594;</button>
+        </div>
+
+        <!-- Dots -->
+        <div class="slider-dots" id="sliderDots"></div>
+
+        <!-- Thumbnails -->
+        <div class="thumb-strip" id="thumbStrip">
+          <div class="thumb active" data-idx="0"><img src="D.jpg" alt="D"></div>
+          <div class="thumb" data-idx="1"><img src="E.jpg" alt="E"></div>
+          <div class="thumb" data-idx="2"><img src="F.jpg" alt="F"></div>
+          <div class="thumb" data-idx="3"><img src="G.jpg" alt="G"></div>
+          <div class="thumb" data-idx="4"><img src="H.jpg" alt="H"></div>
+          <div class="thumb" data-idx="5"><img src="I.jpg" alt="I"></div>
+          <div class="thumb" data-idx="6"><img src="J.jpg" alt="J"></div>
+          <div class="thumb" data-idx="7"><img src="K.jpg" alt="K"></div>
+        </div>
+
+      </div><!-- /wood-section -->
+
+      <!-- Mission -->
       <div id="mission" class="mission">
         <h3>🌍 Our reason for being</h3>
         <p>Our reason for being is not only to conduct business and benefit from it, but also to bring together business people from all corners of the world with the Democratic Republic of Congo, our mother nation, for joint business and mutual investment projects. The outcomes of these connections will also help develop our businesses, enabling us to support those who reach out to us, especially the most vulnerable people living in the most remote areas, by providing them with our assistance.</p>
       </div>
 
-      <!-- ── CULTURE MOSAIC: H, I, J, K ── -->
-      <div class="culture-mosaic">
-        <img src="H.jpg" alt="Culture – H">
-        <img src="I.jpg" alt="Culture – I">
-        <img src="J.jpg" alt="Culture – J">
-        <img src="K.jpg" alt="Culture – K">
-      </div>
-
-      <!-- Contact + Locations -->
+      <!-- Contact -->
       <div id="contact" class="contact-section">
         <div class="contact-info">
           <h3>📞 Connect with us</h3>
@@ -637,7 +391,7 @@
             <span class="loc-item">🇨🇩 D.R. Congo</span>
             <span class="loc-item">🤝 Global Partners</span>
           </div>
-          <p style="margin-top: 1.2rem; font-size: 0.85rem; color:#5E4A38;">Bridging continents — rooted in Congo, serving the world.</p>
+          <p style="margin-top:1.2rem;font-size:0.85rem;color:#5E4A38;">Bridging continents — rooted in Congo, serving the world.</p>
         </div>
       </div>
 
@@ -650,5 +404,62 @@
       <small>GKM Afrika Trading @ 2025 - Powered by SweetBiscuit44</small>
     </div>
   </footer>
+
+  <script>
+    const TOTAL   = 8;
+    let   current = 0;
+    let   autoTimer;
+
+    const track   = document.getElementById('sliderTrack');
+    const counter = document.getElementById('slideCounter');
+    const dotsEl  = document.getElementById('sliderDots');
+    const thumbs  = document.querySelectorAll('.thumb');
+    const wrap    = document.getElementById('sliderWrap');
+
+    // Build dots
+    for (let i = 0; i < TOTAL; i++) {
+      const d = document.createElement('button');
+      d.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(d);
+    }
+    const dots = dotsEl.querySelectorAll('.slider-dot');
+
+    function goTo(n) {
+      current = ((n % TOTAL) + TOTAL) % TOTAL;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      counter.textContent   = `${current + 1} / ${TOTAL}`;
+      dots.forEach((d, i)   => d.classList.toggle('active', i === current));
+      thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+      thumbs[current].scrollIntoView({ behavior:'smooth', inline:'center', block:'nearest' });
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
+    thumbs.forEach(t => t.addEventListener('click', () => goTo(+t.dataset.idx)));
+
+    // Keyboard
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft')  goTo(current - 1);
+      if (e.key === 'ArrowRight') goTo(current + 1);
+    });
+
+    // Touch swipe
+    let tx = 0;
+    track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend',   e => {
+      const diff = tx - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+    });
+
+    // Auto-advance every 5s, pause on hover
+    function startAuto() { autoTimer = setInterval(() => goTo(current + 1), 5000); }
+    function stopAuto()  { clearInterval(autoTimer); }
+    startAuto();
+    wrap.addEventListener('mouseenter', stopAuto);
+    wrap.addEventListener('mouseleave', startAuto);
+  </script>
+
 </body>
 </html>
