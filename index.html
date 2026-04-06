@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>GKM Afrika Trading | African Craft & Culture Exports</title>
-  <!-- Google Fonts + simple reset -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -15,12 +14,11 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #FCF7EF;   /* warm sand base */
+      background-color: #FCF7EF;
       color: #2C221B;
       scroll-behavior: smooth;
     }
 
-    /* earthy brown theme palette */
     :root {
       --earth-dark: #4A3729;
       --earth-deep: #5E3E2C;
@@ -97,7 +95,7 @@
 
     /* hero */
     .hero {
-      padding: 4rem 0 3rem;
+      padding: 4rem 0 2rem;
       text-align: center;
       background: radial-gradient(circle at 80% 20%, rgba(210, 170, 130, 0.08), transparent);
     }
@@ -126,6 +124,29 @@
       border-radius: 4px;
     }
 
+    /* ── HERO BANNER STRIP (A, B, C) ── */
+    .hero-image-strip {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 12px;
+      margin: 2rem 0 3rem;
+      border-radius: 24px;
+      overflow: hidden;
+      height: 340px;
+    }
+
+    .hero-image-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .hero-image-strip img:hover {
+      transform: scale(1.03);
+    }
+
     /* product cards */
     .section-title {
       font-size: 2rem;
@@ -151,7 +172,7 @@
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
 
     .product-card {
@@ -199,7 +220,122 @@
       color: var(--earth-clay);
     }
 
-    /* mission section - rich earth tone */
+    /* ── PRODUCT GALLERY (D, E, F, G) ── */
+    .product-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 0 0 3rem;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 220px;
+    }
+
+    .product-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease, filter 0.3s ease;
+      filter: saturate(0.9);
+    }
+
+    .product-gallery img:hover {
+      transform: scale(1.05);
+      filter: saturate(1.2);
+    }
+
+    /* gallery label strip */
+    .gallery-label {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--earth-clay);
+      margin: -1.5rem 0 2.5rem;
+    }
+
+    /* ── WOOD FOR SALE BANNER ── */
+    .wood-sale-banner {
+      background: linear-gradient(135deg, #3E2A1A 0%, #5E3E2C 60%, #7C5A42 100%);
+      border-radius: 28px;
+      padding: 2rem 2.5rem;
+      margin: 0 0 3.5rem;
+      box-shadow: 0 16px 32px rgba(62, 42, 26, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wood-sale-banner::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 180px;
+      height: 180px;
+      background: rgba(255, 220, 170, 0.06);
+      border-radius: 50%;
+    }
+
+    .wood-sale-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .wood-sale-icon {
+      font-size: 2.8rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .wood-sale-text h4 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #F5DEB3;
+      letter-spacing: 0.3px;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.85rem;
+    }
+
+    .wood-sale-text p {
+      font-size: 1rem;
+      color: #E8D5C0;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    .wood-sale-text strong {
+      color: #FFD9A8;
+    }
+
+    .wood-sale-cta {
+      display: inline-block;
+      background: #B87C4E;
+      color: #FFF8F0;
+      text-decoration: none;
+      padding: 0.55rem 1.4rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .wood-sale-cta:hover {
+      background: #D4936A;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 760px) {
+      .wood-sale-inner { flex-direction: column; gap: 1rem; }
+      .wood-sale-banner { padding: 1.5rem; }
+    }
+
+    /* mission section */
     .mission {
       background: #EFE2D4;
       border-radius: 48px;
@@ -220,6 +356,29 @@
       line-height: 1.6;
       color: #2F241C;
       max-width: 85%;
+    }
+
+    /* ── CULTURE MOSAIC (H, I, J, K) ── */
+    .culture-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.6fr 1fr;
+      gap: 12px;
+      margin: -1rem 0 4rem;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 200px;
+    }
+
+    .culture-mosaic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .culture-mosaic img:hover {
+      transform: scale(1.04);
     }
 
     /* contact + locations */
@@ -326,29 +485,33 @@
 
     /* responsiveness */
     @media (max-width: 760px) {
-      .container {
-        padding: 0 24px;
+      .container { padding: 0 24px; }
+      .nav { flex-direction: column; }
+      .hero h2 { font-size: 2.2rem; }
+      .mission p { max-width: 100%; }
+      .contact-section { flex-direction: column; }
+      .section-title:after { width: 40%; }
+
+      .hero-image-strip {
+        grid-template-columns: 1fr;
+        height: auto;
       }
-      .nav {
-        flex-direction: column;
+      .hero-image-strip img { height: 200px; }
+
+      .product-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
       }
-      .hero h2 {
-        font-size: 2.2rem;
+      .product-gallery img { height: 140px; }
+
+      .culture-mosaic {
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
       }
-      .mission p {
-        max-width: 100%;
-      }
-      .contact-section {
-        flex-direction: column;
-      }
-      .section-title:after {
-        width: 40%;
-      }
+      .culture-mosaic img { height: 130px; }
     }
 
-    button, a {
-      cursor: pointer;
-    }
+    button, a { cursor: pointer; }
 
     hr {
       border: none;
@@ -377,6 +540,7 @@
 
   <main>
     <div class="container">
+
       <!-- Hero section -->
       <div class="hero">
         <h2>Export African Craft & Culture<br>where heritage meets global trade</h2>
@@ -384,25 +548,29 @@
         <div class="hero-accent"></div>
       </div>
 
-      <!-- Products section (African Clothes, Wood, Tropical Fruits) -->
+      <!-- ── HERO IMAGE STRIP: A, B, C ── -->
+      <div class="hero-image-strip">
+        <img src="A.jpg" alt="African export – A">
+        <img src="B.jpg" alt="African export – B">
+        <img src="C.jpg" alt="African export – C">
+      </div>
+
+      <!-- Products section -->
       <div id="products">
         <span class="section-title">Our exports · pure origin</span>
         <div class="products-grid">
-          <!-- African Clothes card -->
           <div class="product-card">
             <div class="icon-emblem">👘✨</div>
             <h3>African Clothes</h3>
             <p><strong>Bazin (1st Quality)</strong> from West Africa. Celebration-ready fabrics rooted in culture. Rich textures, vibrant symbolism, authentic craftsmanship.</p>
             <div class="origin-tag">🇨🇩🇳🇬 West Africa heritage</div>
           </div>
-          <!-- Wood card -->
           <div class="product-card">
             <div class="icon-emblem">🌳🔨</div>
             <h3>Premium Hardwoods</h3>
             <p><strong>Tola, Kambala, Wenge, Red & Black Wood</strong> from D.R. Congo. Sourced responsibly — timeless elegance for furniture, sculpture & architecture.</p>
             <div class="origin-tag">🇨🇩 Democratic Republic of Congo</div>
           </div>
-          <!-- Tropical Fruits card -->
           <div class="product-card">
             <div class="icon-emblem">🍍🥭🍌</div>
             <h3>Tropical Fruits</h3>
@@ -412,13 +580,42 @@
         </div>
       </div>
 
-      <!-- Mission: deeper purpose with brown earth tones -->
+      <!-- ── PRODUCT GALLERY: D, E, F, G ── -->
+      <div class="product-gallery">
+        <img src="D.jpg" alt="Product showcase – D">
+        <img src="E.jpg" alt="Product showcase – E">
+        <img src="F.jpg" alt="Product showcase – F">
+        <img src="G.jpg" alt="Product showcase – G">
+      </div>
+      <p class="gallery-label">— Crafted in Africa · Delivered to the World —</p>
+
+      <!-- ── WOOD FOR SALE CALLOUT ── -->
+      <div class="wood-sale-banner">
+        <div class="wood-sale-inner">
+          <span class="wood-sale-icon">🪵</span>
+          <div class="wood-sale-text">
+            <h4>Wood Pieces Available — Now Selling</h4>
+            <p>We currently have a selection of premium African hardwood pieces available for direct purchase — including <strong>Tola, Kambala, Wenge, Red Wood and Black Wood</strong>. Ideal for furniture makers, sculptors, architects, and collectors. If you're interested in acquiring any of these pieces, we'd love to hear from you.</p>
+            <a href="#contact" class="wood-sale-cta">📩 Contact us to enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission section -->
       <div id="mission" class="mission">
         <h3>🌍 Our reason for being</h3>
         <p>Our reason for being is not only to conduct business and benefit from it, but also to bring together business people from all corners of the world with the Democratic Republic of Congo, our mother nation, for joint business and mutual investment projects. The outcomes of these connections will also help develop our businesses, enabling us to support those who reach out to us, especially the most vulnerable people living in the most remote areas, by providing them with our assistance.</p>
       </div>
 
-      <!-- Contact + Locations combined -->
+      <!-- ── CULTURE MOSAIC: H, I, J, K ── -->
+      <div class="culture-mosaic">
+        <img src="H.jpg" alt="Culture – H">
+        <img src="I.jpg" alt="Culture – I">
+        <img src="J.jpg" alt="Culture – J">
+        <img src="K.jpg" alt="Culture – K">
+      </div>
+
+      <!-- Contact + Locations -->
       <div id="contact" class="contact-section">
         <div class="contact-info">
           <h3>📞 Connect with us</h3>
@@ -443,6 +640,7 @@
           <p style="margin-top: 1.2rem; font-size: 0.85rem; color:#5E4A38;">Bridging continents — rooted in Congo, serving the world.</p>
         </div>
       </div>
+
     </div>
   </main>
 
@@ -452,7 +650,5 @@
       <small>GKM Afrika Trading @ 2025 - Powered by SweetBiscuit44</small>
     </div>
   </footer>
-
-  <!-- subtle smoothing + decorative (no external) -->
 </body>
 </html>
