@@ -18,21 +18,21 @@
     }
 
     :root {
-      --earth-dark:   #4A3729;
-      --earth-deep:   #5E3E2C;
-      --earth-terra:  #7C5A42;
-      --earth-clay:   #9B6E4C;
-      --earth-sand:   #D9C2A7;
-      --earth-cream:  #F4ECE1;
-      --earth-accent: #B87C4E;
-      --shadow-warm:  rgba(74,55,41,0.08);
+      --earth-dark:    #4A3729;
+      --earth-deep:    #5E3E2C;
+      --earth-terra:   #7C5A42;
+      --earth-clay:    #9B6E4C;
+      --earth-sand:    #D9C2A7;
+      --earth-cream:   #F4ECE1;
+      --earth-accent:  #B87C4E;
+      --shadow-warm:   rgba(74,55,41,0.08);
     }
 
     .container { max-width:1200px; margin:0 auto; padding:0 32px; }
 
     /* ═══════════════════════════
-       HEADER / NAV
-    ═══════════════════════════ */
+        HEADER / NAV
+    /* ═══════════════════════════ */
     .header {
       background:rgba(254,249,240,0.97);
       border-bottom:1px solid #EADBCE;
@@ -71,16 +71,16 @@
     .nav-links li a.active   { background:var(--earth-accent); color:#fff; font-weight:600; }
 
     /* ═══════════════════════════
-       PAGE SYSTEM
-    ═══════════════════════════ */
+        PAGE SYSTEM
+    /* ═══════════════════════════ */
     .page { display:none; flex:1; }
     .page.active { display:block; }
 
     main { flex:1; padding-bottom:3rem; }
 
     /* ═══════════════════════════
-       PAGE: HOME
-    ═══════════════════════════ */
+        PAGE: HOME
+    /* ═══════════════════════════ */
     .hero {
       padding:4.5rem 0 3rem;
       text-align:center;
@@ -125,19 +125,11 @@
     }
     .btn-outline:hover { background:var(--earth-accent); color:#fff; transform:translateY(-2px); }
 
-    /* divider */
     .section-divider { height:1px; background:linear-gradient(90deg,transparent,#DCCBB8,transparent); margin:3rem 0; }
 
-    /* section heading */
-    .section-heading {
-      font-size:1.75rem; font-weight:700;
-      color:#3B2A1F; margin-bottom:0.5rem;
-    }
-    .section-sub {
-      font-size:0.95rem; color:#7A5C46; margin-bottom:2rem; line-height:1.5;
-    }
+    .section-heading { font-size:1.75rem; font-weight:700; color:#3B2A1F; margin-bottom:0.5rem; }
+    .section-sub { font-size:0.95rem; color:#7A5C46; margin-bottom:2rem; line-height:1.5; }
 
-    /* product cards */
     .products-grid {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -164,7 +156,6 @@
       padding:0.25rem 0.8rem; border-radius:60px;
     }
 
-    /* why us strip */
     .why-strip {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -180,8 +171,8 @@
     .why-item p  { font-size:0.82rem; color:#5C4030; line-height:1.4; }
 
     /* ═══════════════════════════
-       PAGE: SALES
-    ═══════════════════════════ */
+        PAGE: SALES
+    /* ═══════════════════════════ */
     .sales-hero {
       background:linear-gradient(160deg,#2E1C10 0%,#4A2E1C 55%,#6B4226 100%);
       border-radius:0 0 32px 32px;
@@ -213,7 +204,7 @@
     }
     .sales-cta:hover { background:#D4936A; transform:translateY(-2px); }
 
-    /* SLIDER */
+    /* SLIDER SYSTEM */
     .slider-outer {
       position:relative;
       border-radius:20px;
@@ -227,24 +218,26 @@
       will-change:transform;
     }
     .slide {
-      min-width:100%;
-      height:480px;
-      flex-shrink:0;
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:#1A0E06;
+      min-width: 100%;
+      height: 480px;
+      flex-shrink: 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1A0E06;
+      overflow: hidden; /* Prevents overlap */
     }
-    /* KEY FIX: contain so images never stretch */
     .slide img {
-      max-width:100%; max-height:100%;
-      width:auto; height:auto;
-      object-fit:contain;
-      display:block;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain; /* Shows full wood piece */
+      display: block;
+      flex-shrink: 0;
     }
 
-    /* slide counter */
     .slide-counter {
       position:absolute; bottom:14px; right:16px;
       background:rgba(0,0,0,0.6); color:#FFD9A8;
@@ -253,7 +246,6 @@
       backdrop-filter:blur(4px);
     }
 
-    /* arrows */
     .slider-btn {
       position:absolute; top:50%; transform:translateY(-50%);
       width:48px; height:48px;
@@ -270,10 +262,7 @@
     .slider-btn.prev { left:14px; }
     .slider-btn.next { right:14px; }
 
-    /* dots */
-    .slider-dots {
-      display:flex; justify-content:center; gap:8px; margin-top:1rem;
-    }
+    .slider-dots { display:flex; justify-content:center; gap:8px; margin-top:1rem; }
     .slider-dot {
       width:8px; height:8px; border-radius:50%;
       background:rgba(255,200,140,0.3);
@@ -282,10 +271,9 @@
     }
     .slider-dot.active { background:#B87C4E; transform:scale(1.4); }
 
-    /* thumbnails */
     .thumb-strip {
       display:flex; gap:8px; margin-top:10px;
-      overflow-x:auto; padding-bottom:2px;
+      overflow-x:auto; padding-bottom:10px;
       scrollbar-width:none;
     }
     .thumb-strip::-webkit-scrollbar { display:none; }
@@ -300,8 +288,8 @@
     .thumb.active { border-color:#B87C4E; opacity:1; }
 
     /* ═══════════════════════════
-       PAGE: MISSION
-    ═══════════════════════════ */
+        PAGE: MISSION
+    /* ═══════════════════════════ */
     .mission-page { padding-top:3rem; }
     .mission-card {
       background:#EFE2D4;
@@ -334,8 +322,8 @@
     .value-card p  { font-size:0.85rem; color:#6A5040; line-height:1.5; }
 
     /* ═══════════════════════════
-       PAGE: CONTACT US
-    ═══════════════════════════ */
+        PAGE: CONTACT US
+    /* ═══════════════════════════ */
     .contact-page { padding-top:3rem; }
     .contact-grid {
       display:grid;
@@ -382,8 +370,8 @@
     }
 
     /* ═══════════════════════════
-       FOOTER
-    ═══════════════════════════ */
+        FOOTER
+    /* ═══════════════════════════ */
     .footer {
       background:#3C2A1E; color:#EADBCE;
       padding:1.6rem 0;
@@ -398,14 +386,14 @@
     .footer small { font-size:0.78rem; opacity:0.6; }
 
     /* ═══════════════════════════
-       RESPONSIVE
-    ═══════════════════════════ */
+        RESPONSIVE FIXES
+    /* ═══════════════════════════ */
     @media (max-width:768px) {
       .container { padding:0 20px; }
       .nav-links li a { padding:0.45rem 0.7rem; font-size:0.82rem; }
       .hero h2 { font-size:2.1rem; }
       .sales-hero { padding:2rem 1.4rem; border-radius:0 0 20px 20px; }
-      .slide { height:260px; }
+      .slide { height: 320px; } /* Lower height for mobile */
       .contact-grid { grid-template-columns:1fr; }
       .why-strip { grid-template-columns:1fr 1fr; }
       .mission-card { padding:2rem 1.5rem; }
@@ -413,6 +401,8 @@
     @media (max-width:480px) {
       .hero h2 { font-size:1.75rem; }
       .nav-links li a { padding:0.4rem 0.55rem; font-size:0.78rem; }
+      .logo h1 { font-size: 1.4rem; }
+      .slide { height: 260px; }
     }
 
     button { cursor:pointer; }
@@ -420,7 +410,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="header">
     <div class="container">
       <nav class="nav">
@@ -429,10 +418,10 @@
           <p>roots of excellence · heart of congo</p>
         </div>
         <ul class="nav-links">
-          <li><a href="#" id="nav-home"       onclick="showPage('home');      return false;" class="active">Home</a></li>
-          <li><a href="#" id="nav-sales"      onclick="showPage('sales');     return false;">Sales</a></li>
-          <li><a href="#" id="nav-mission"    onclick="showPage('mission');   return false;">Mission</a></li>
-          <li><a href="#" id="nav-contact"    onclick="showPage('contact');   return false;">Contact Us</a></li>
+          <li><a href="#" id="nav-home" onclick="showPage('home'); return false;" class="active">Home</a></li>
+          <li><a href="#" id="nav-sales" onclick="showPage('sales'); return false;">Sales</a></li>
+          <li><a href="#" id="nav-mission" onclick="showPage('mission'); return false;">Mission</a></li>
+          <li><a href="#" id="nav-contact" onclick="showPage('contact'); return false;">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -440,11 +429,8 @@
 
   <main>
 
-    <!-- ══════════════════ PAGE: HOME ══════════════════ -->
     <div id="page-home" class="page active">
       <div class="container">
-
-        <!-- Hero -->
         <div class="hero">
           <span class="hero-eyebrow">African Craft &amp; Culture Exports</span>
           <h2>Where Heritage Meets<br>Global Trade</h2>
@@ -458,78 +444,68 @@
 
         <div class="section-divider"></div>
 
-        <!-- What we export -->
-        <div>
-          <h2 class="section-heading">What We Export</h2>
-          <p class="section-sub">Three core categories — each rooted in the richness of Central and West Africa.</p>
-          <div class="products-grid">
-            <div class="product-card">
-              <span class="card-icon">👘</span>
-              <h3>African Clothes</h3>
-              <p>Bazin (1st Quality) from West Africa — celebration-ready fabrics rooted in culture. Rich textures, vibrant symbolism, authentic craftsmanship.</p>
-              <span class="origin-tag">🇨🇩🇳🇬 West Africa heritage</span>
-            </div>
-            <div class="product-card">
-              <span class="card-icon">🌳</span>
-              <h3>Premium Hardwoods</h3>
-              <p>Tola, Kambala, Wenge, Red &amp; Black Wood from D.R. Congo. Responsibly sourced — timeless elegance for furniture, sculpture &amp; architecture.</p>
-              <span class="origin-tag">🇨🇩 D.R. Congo origin</span>
-            </div>
-            <div class="product-card">
-              <span class="card-icon">🍍</span>
-              <h3>Tropical Fruits</h3>
-              <p>Pineapples, Mangoes, Plantain &amp; more. Fresh, seasonal, responsibly sourced — sun-ripened flavours delivered with integrity.</p>
-              <span class="origin-tag">🌍 Congolese soil</span>
-            </div>
+        <h2 class="section-heading">What We Export</h2>
+        <p class="section-sub">Three core categories — each rooted in the richness of Central and West Africa.</p>
+        <div class="products-grid">
+          <div class="product-card">
+            <span class="card-icon">👘</span>
+            <h3>African Clothes</h3>
+            <p>Bazin (1st Quality) from West Africa — celebration-ready fabrics rooted in culture. Rich textures, vibrant symbolism.</p>
+            <span class="origin-tag">🇨🇩🇳🇬 West Africa heritage</span>
+          </div>
+          <div class="product-card">
+            <span class="card-icon">🌳</span>
+            <h3>Premium Hardwoods</h3>
+            <p>Tola, Kambala, Wenge, Red &amp; Black Wood from D.R. Congo. Responsibly sourced for architecture and furniture.</p>
+            <span class="origin-tag">🇨🇩 D.R. Congo origin</span>
+          </div>
+          <div class="product-card">
+            <span class="card-icon">🍍</span>
+            <h3>Tropical Fruits</h3>
+            <p>Pineapples, Mangoes, Plantain &amp; more. Fresh, seasonal, responsibly sourced — sun-ripened flavours.</p>
+            <span class="origin-tag">🌍 Congolese soil</span>
           </div>
         </div>
 
-        <!-- Why us -->
         <div class="why-strip">
           <div class="why-item">
             <span class="why-icon">🌍</span>
             <h4>Congo Origin</h4>
-            <p>All products sourced directly from D.R. Congo and West Africa.</p>
+            <p>Direct from D.R. Congo and West Africa.</p>
           </div>
           <div class="why-item">
             <span class="why-icon">🤝</span>
             <h4>Joint Ventures</h4>
-            <p>We connect global partners with Congolese businesses for mutual growth.</p>
+            <p>Connecting global partners with Congolese businesses.</p>
           </div>
           <div class="why-item">
             <span class="why-icon">📦</span>
             <h4>Export Ready</h4>
-            <p>End-to-end export support for international buyers and partners.</p>
+            <p>End-to-end export support for international buyers.</p>
           </div>
           <div class="why-item">
             <span class="why-icon">💛</span>
-            <h4>Community Impact</h4>
-            <p>A portion of every deal supports vulnerable communities in remote areas.</p>
+            <h4>Community</h4>
+            <p>Supporting vulnerable communities in remote areas.</p>
           </div>
         </div>
-
       </div>
-    </div><!-- /page-home -->
+    </div>
 
-
-    <!-- ══════════════════ PAGE: SALES ══════════════════ -->
     <div id="page-sales" class="page">
-
-      <!-- Dark hero banner -->
       <div class="sales-hero">
         <div class="container">
           <span class="sales-eyebrow">Now Available · Direct Purchase</span>
           <h2>We Are Selling Premium<br>African Wood Pieces</h2>
-          <p>A hand-selected collection of authentic hardwood pieces available for direct purchase — including <strong>Tola, Kambala, Wenge, Red Wood and Black Wood</strong>, all sourced from the D.R. Congo. Ideal for furniture makers, sculptors, architects, and collectors. Browse the gallery below and contact us if anything catches your eye.</p>
+          <p>Hand-selected authentic hardwood: <strong>Tola, Kambala, Wenge, Red and Black Wood</strong>. Ideal for creators and collectors.</p>
           <button class="sales-cta" onclick="showPage('contact')">📩 Enquire About a Piece</button>
         </div>
       </div>
 
       <div class="container">
         <h2 class="section-heading">Wood Piece Gallery</h2>
-        <p class="section-sub">Use the arrows or thumbnails to browse. All pieces are available for purchase — contact us to discuss pricing and delivery.</p>
+        <p class="section-sub">Use the arrows or thumbnails to browse. Contact us to discuss pricing.</p>
 
-        <!-- Slider -->
         <div class="slider-outer" id="sliderOuter">
           <div class="slider-track" id="sliderTrack">
             <div class="slide"><img src="D.jpg" alt="Wood piece 1"></div>
@@ -546,10 +522,8 @@
           <span class="slide-counter" id="slideCounter">1 / 8</span>
         </div>
 
-        <!-- Dots -->
         <div class="slider-dots" id="sliderDots"></div>
 
-        <!-- Thumbnails -->
         <div class="thumb-strip" id="thumbStrip">
           <div class="thumb active" data-idx="0"><img src="D.jpg" alt="1"></div>
           <div class="thumb" data-idx="1"><img src="E.jpg" alt="2"></div>
@@ -560,135 +534,87 @@
           <div class="thumb" data-idx="6"><img src="J.jpg" alt="7"></div>
           <div class="thumb" data-idx="7"><img src="K.jpg" alt="8"></div>
         </div>
-
-        <div style="margin-top:2rem;text-align:center;">
-          <button class="btn-primary" onclick="showPage('contact')">📩 Contact Us to Purchase</button>
-        </div>
-
       </div>
-    </div><!-- /page-sales -->
+    </div>
 
-
-    <!-- ══════════════════ PAGE: MISSION ══════════════════ -->
     <div id="page-mission" class="page">
       <div class="container mission-page">
-
         <div class="mission-card">
           <span class="card-eyebrow">Our Purpose</span>
           <h2>🌍 Our Reason for Being</h2>
-          <p>Our reason for being is not only to conduct business and benefit from it, but also to bring together business people from all corners of the world with the Democratic Republic of Congo, our mother nation, for joint business and mutual investment projects. The outcomes of these connections will also help develop our businesses, enabling us to support those who reach out to us — especially the most vulnerable people living in the most remote areas — by providing them with our assistance.</p>
+          <p>Our goal is to connect global businesses with the D.R. Congo for mutual investment. These connections help us support the most vulnerable communities in remote Congolese regions.</p>
         </div>
-
         <div class="values-grid">
-          <div class="value-card">
-            <span class="v-icon">🌱</span>
-            <h4>Responsible Sourcing</h4>
-            <p>Every product is sourced with care for the land, the people, and the environment.</p>
-          </div>
-          <div class="value-card">
-            <span class="v-icon">🤝</span>
-            <h4>Partnership</h4>
-            <p>We build lasting relationships between international buyers and local producers.</p>
-          </div>
-          <div class="value-card">
-            <span class="v-icon">💛</span>
-            <h4>Community First</h4>
-            <p>A share of every transaction goes toward supporting vulnerable communities in remote areas.</p>
-          </div>
-          <div class="value-card">
-            <span class="v-icon">🌍</span>
-            <h4>Congo Heritage</h4>
-            <p>We proudly represent the richness of the D.R. Congo on the global stage.</p>
-          </div>
+          <div class="value-card"><h4>🌱 Responsible</h4><p>Sourced with care for land and people.</p></div>
+          <div class="value-card"><h4>🤝 Partnership</h4><p>Building lasting global relationships.</p></div>
+          <div class="value-card"><h4>💛 Community</h4><p>Profits help those in need.</p></div>
+          <div class="value-card"><h4>🌍 Heritage</h4><p>Representing Congolese richness.</p></div>
         </div>
-
       </div>
-    </div><!-- /page-mission -->
+    </div>
 
-
-    <!-- ══════════════════ PAGE: CONTACT US ══════════════════ -->
     <div id="page-contact" class="page">
       <div class="container contact-page">
-
         <h2 class="section-heading">Contact Us</h2>
-        <p class="section-sub">We'd love to hear from you — whether you're a buyer, investor, or potential partner.</p>
-
         <div class="contact-grid">
-
           <div class="contact-card">
             <h3>📞 Get in Touch</h3>
             <div class="contact-row">
               <span class="c-icon">📱</span>
-              <div>
-                <p class="c-label">Phone</p>
-                <p class="c-val">+27 72 276 5899</p>
-              </div>
+              <div><p class="c-label">Phone</p><p class="c-val">+27 72 276 5899</p></div>
             </div>
             <div class="contact-row">
               <span class="c-icon">✉️</span>
               <div>
-                <p class="c-label">Email Addresses</p>
+                <p class="c-label">Email</p>
                 <div class="email-pills">
                   <span class="email-pill">gkmafrikat@outlook.com</span>
-                  <span class="email-pill">info@gkmtrading.com</span>
                   <span class="email-pill">mamuessa@gmail.com</span>
                 </div>
               </div>
             </div>
           </div>
-
           <div class="locations-card">
             <h3>📍 Our Presence</h3>
-            <p style="font-size:0.88rem;color:#5C4030;margin-bottom:1.2rem;line-height:1.5;">Bridging continents — rooted in Congo, serving the world.</p>
             <div class="loc-grid">
               <span class="loc-badge">🇿🇦 Cape Town</span>
-              <span class="loc-badge">🌍 West Africa</span>
               <span class="loc-badge">🇨🇩 D.R. Congo</span>
-              <span class="loc-badge">🤝 Global Partners</span>
             </div>
           </div>
-
         </div>
-
-        <p class="contact-note">For wood sales, import enquiries, or partnership proposals — reach out via any of the channels above. We typically respond within 1–2 business days.</p>
-
       </div>
-    </div><!-- /page-contact -->
+    </div>
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
-      <p>🌿 GKM Afrika Trading — Export African Craft &amp; Culture</p>
-      <small>GKM Afrika Trading © 2025 · Powered by SweetBiscuit44</small>
+      <p>🌿 GKM Afrika Trading</p>
+      <small>© 2026 · Powered by SweetBiscuit44</small>
     </div>
   </footer>
 
   <script>
-    /* ── PAGE NAVIGATION ── */
     function showPage(name) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
       document.getElementById('page-' + name).classList.add('active');
-      document.getElementById('nav-' + name).classList.add('active');
+      const navItem = document.getElementById('nav-' + name);
+      if(navItem) navItem.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    /* ── MANUAL SLIDER (no auto-play) ── */
-    const TOTAL   = 8;
-    let   current = 0;
-
-    const track   = document.getElementById('sliderTrack');
+    /* SLIDER LOGIC */
+    const TOTAL = 8;
+    let current = 0;
+    const track = document.getElementById('sliderTrack');
     const counter = document.getElementById('slideCounter');
-    const dotsEl  = document.getElementById('sliderDots');
-    const thumbs  = document.querySelectorAll('.thumb');
+    const dotsEl = document.getElementById('sliderDots');
+    const thumbs = document.querySelectorAll('.thumb');
 
-    // Build dots
     for (let i = 0; i < TOTAL; i++) {
       const d = document.createElement('button');
       d.className = 'slider-dot' + (i === 0 ? ' active' : '');
-      d.setAttribute('aria-label', 'Slide ' + (i + 1));
       d.addEventListener('click', () => goTo(i));
       dotsEl.appendChild(d);
     }
@@ -697,29 +623,20 @@
     function goTo(n) {
       current = ((n % TOTAL) + TOTAL) % TOTAL;
       track.style.transform = `translateX(-${current * 100}%)`;
-      counter.textContent   = `${current + 1} / ${TOTAL}`;
-      dots.forEach((d, i)   => d.classList.toggle('active', i === current));
+      counter.textContent = `${current + 1} / ${TOTAL}`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
       thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
-      thumbs[current].scrollIntoView({ behavior:'smooth', inline:'center', block:'nearest' });
     }
 
     document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
     document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
     thumbs.forEach(t => t.addEventListener('click', () => goTo(+t.dataset.idx)));
 
-    // Keyboard (only when Sales page is visible)
+    // Keyboard support
     document.addEventListener('keydown', e => {
       if (!document.getElementById('page-sales').classList.contains('active')) return;
-      if (e.key === 'ArrowLeft')  goTo(current - 1);
+      if (e.key === 'ArrowLeft') goTo(current - 1);
       if (e.key === 'ArrowRight') goTo(current + 1);
-    });
-
-    // Touch swipe
-    let tx = 0;
-    track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive:true });
-    track.addEventListener('touchend',   e => {
-      const diff = tx - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
     });
   </script>
 
