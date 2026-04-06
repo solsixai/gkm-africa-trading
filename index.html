@@ -1,465 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>GKM Afrika Trading | African Craft & Culture Exports</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #FCF7EF;
-      color: #2C221B;
-      scroll-behavior: smooth;
-    }
+<title>GKM Afrika Trading | African Craft & Culture Exports</title>
 
-    :root {
-      --earth-dark:   #4A3729;
-      --earth-deep:   #5E3E2C;
-      --earth-terra:  #7C5A42;
-      --earth-clay:   #9B6E4C;
-      --earth-sand:   #D9C2A7;
-      --earth-cream:  #F4ECE1;
-      --earth-accent: #B87C4E;
-      --shadow-warm:  rgba(74,55,41,0.08);
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+<style>
 
-    /* HEADER */
-    .header {
-      background: rgba(254,249,240,0.96);
-      border-bottom: 1px solid #EADBCE;
-      padding: 1rem 0;
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(2px);
-    }
-    .nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
-    .logo h1 {
-      font-size:1.8rem; font-weight:600; letter-spacing:-0.02em;
-      background:linear-gradient(135deg,#4A3729 0%,#7C5A42 100%);
-      background-clip:text; -webkit-background-clip:text; color:transparent;
-    }
-    .logo p { font-size:0.75rem; color:#7C5A42; letter-spacing:1px; font-weight:500; }
-    .nav-links { display:flex; gap:2rem; list-style:none; }
-    .nav-links a {
-      text-decoration:none; font-weight:500; color:var(--earth-dark);
-      transition:0.2s; font-size:0.95rem;
-    }
-    .nav-links a:hover { color:var(--earth-accent); border-bottom:2px solid var(--earth-accent); padding-bottom:4px; }
+/* GLOBAL FIXES */
+* { margin:0; padding:0; box-sizing:border-box; }
 
-    /* HERO */
-    .hero {
-      padding:4rem 0 2rem; text-align:center;
-      background:radial-gradient(circle at 80% 20%,rgba(210,170,130,0.08),transparent);
-    }
-    .hero h2 { font-size:3rem; font-weight:700; color:var(--earth-deep); line-height:1.2; max-width:900px; margin:0 auto 1rem; }
-    .hero p   { font-size:1.2rem; color:#5E4B3A; max-width:680px; margin:0 auto; }
-    .hero-accent { width:100px; height:4px; background:var(--earth-clay); margin:1.5rem auto 0; border-radius:4px; }
+body {
+  font-family:'Inter', sans-serif;
+  background:#FCF7EF;
+  color:#2C221B;
+  overflow-x:hidden; /* PREVENT BLEED */
+}
 
-    /* HERO IMAGE STRIP — A B C */
-    .hero-image-strip {
-      display:grid; grid-template-columns:1.4fr 1fr 1fr;
-      gap:12px; margin:2rem 0 3rem;
-      border-radius:24px; overflow:hidden; height:340px;
-    }
-    .hero-image-strip img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s; }
-    .hero-image-strip img:hover { transform:scale(1.03); }
+img {
+  display:block;
+  max-width:100%;
+}
 
-    /* SECTION TITLE */
-    .section-title {
-      font-size:2rem; font-weight:600; margin:3rem 0 1.8rem;
-      color:#3B2A1F; position:relative; display:inline-block;
-    }
-    .section-title:after {
-      content:''; position:absolute; bottom:-10px; left:0;
-      width:60%; height:3px; background:var(--earth-terra); border-radius:2px;
-    }
+/* HEADER */
+.header {
+  background:rgba(254,249,240,0.96);
+  border-bottom:1px solid #EADBCE;
+  padding:1rem 0;
+  position:sticky;
+  top:0;
+  z-index:50;
+}
 
-    /* PRODUCT CARDS */
-    .products-grid { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; margin-bottom:3rem; }
-    .product-card {
-      background:#FFFFFFE6; backdrop-filter:blur(2px);
-      border-radius:32px; padding:2rem 1.5rem; flex:1 1 280px;
-      box-shadow:0 12px 28px var(--shadow-warm);
-      transition:all 0.25s ease; border:1px solid #E9DDD0; text-align:center;
-    }
-    .product-card:hover { transform:translateY(-6px); box-shadow:0 20px 30px -12px rgba(74,55,41,0.2); border-color:var(--earth-sand); }
-    .icon-emblem { font-size:2.8rem; margin-bottom:1rem; }
-    .product-card h3 { font-size:1.7rem; font-weight:600; color:#4E3524; margin-bottom:0.75rem; }
-    .product-card p  { color:#5F4A38; line-height:1.4; font-size:0.95rem; }
-    .origin-tag { margin-top:1rem; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:1px; color:var(--earth-clay); }
+.container { max-width:1280px; margin:auto; padding:0 32px; }
 
-    /* ══════════════════════════════════════════
-       WOOD FOR SALE SECTION
-    ══════════════════════════════════════════ */
-    .wood-section {
-      background: linear-gradient(160deg, #2E1C10 0%, #4A2E1C 50%, #6B4226 100%);
-      border-radius: 36px;
-      padding: 2.8rem 2.8rem 2.2rem;
-      margin: 1rem 0 4rem;
-      box-shadow: 0 20px 48px rgba(30,15,5,0.3);
-      position: relative; overflow: hidden;
-    }
+.nav { display:flex; justify-content:space-between; align-items:center; }
 
-    /* header row */
-    .wood-header {
-      display:flex; align-items:flex-start; gap:1.2rem;
-      margin-bottom:2rem;
-    }
-    .wood-header-icon { font-size:2.6rem; flex-shrink:0; margin-top:4px; }
-    .wood-label {
-      font-size:0.75rem; font-weight:700; letter-spacing:2.5px;
-      text-transform:uppercase; color:#B87C4E; margin-bottom:0.4rem;
-    }
-    .wood-header h3 {
-      font-size:1.65rem; font-weight:700; color:#F5DEB3;
-      line-height:1.25; margin-bottom:0.65rem;
-    }
-    .wood-header p {
-      font-size:0.97rem; color:#D8C4AD; line-height:1.65; max-width:700px;
-    }
-    .wood-header strong { color:#FFD9A8; }
+.nav-links {
+  list-style:none;
+  display:flex;
+  gap:2rem;
+}
 
-    .wood-cta {
-      display:inline-block; margin-top:1.1rem;
-      background:#B87C4E; color:#FFF8F0; text-decoration:none;
-      padding:0.6rem 1.5rem; border-radius:60px;
-      font-weight:600; font-size:0.9rem;
-      transition:background 0.2s, transform 0.2s;
-    }
-    .wood-cta:hover { background:#D4936A; transform:translateY(-2px); }
+.nav-links a {
+  text-decoration:none;
+  color:#4A3729;
+  font-weight:500;
+}
 
-    /* SLIDER WRAPPER */
-    .slider-wrap {
-      position:relative; border-radius:20px; overflow:hidden;
-      background:rgba(0,0,0,0.2);
-    }
-    .slider-track {
-      display:flex;
-      transition:transform 0.45s cubic-bezier(0.4,0,0.2,1);
-    }
-    .slide {
-      min-width:100%; height:420px;
-      flex-shrink:0; position:relative;
-    }
-    .slide img { width:100%; height:100%; object-fit:cover; display:block; }
+/* HERO */
+.hero {
+  padding:4rem 0 2rem;
+  text-align:center;
+}
 
-    /* counter badge */
-    .slide-counter {
-      position:absolute; bottom:14px; right:18px;
-      background:rgba(0,0,0,0.55); color:#FFD9A8;
-      font-size:0.78rem; font-weight:600;
-      padding:4px 12px; border-radius:60px; letter-spacing:1px;
-      backdrop-filter:blur(4px);
-    }
+.hero h2 { font-size:3rem; }
 
-    /* arrow buttons */
-    .slider-btn {
-      position:absolute; top:50%; transform:translateY(-50%);
-      width:46px; height:46px;
-      background:rgba(20,10,0,0.6);
-      border:1px solid rgba(184,124,78,0.45);
-      border-radius:50%; color:#F5DEB3;
-      font-size:1.2rem; cursor:pointer;
-      display:flex; align-items:center; justify-content:center;
-      transition:background 0.2s, transform 0.2s;
-      z-index:10; backdrop-filter:blur(4px);
-      user-select:none;
-    }
-    .slider-btn:hover { background:rgba(184,124,78,0.75); transform:translateY(-50%) scale(1.08); }
-    .slider-btn.prev { left:14px; }
-    .slider-btn.next { right:14px; }
+/* HERO IMAGES */
+.hero-image-strip {
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:12px;
+  margin:2rem 0 3rem;
+  border-radius:24px;
+  overflow:hidden;
+  height:340px;
+}
 
-    /* dot strip */
-    .slider-dots {
-      display:flex; justify-content:center; gap:8px; margin-top:1.1rem;
-    }
-    .slider-dot {
-      width:8px; height:8px; border-radius:50%;
-      background:rgba(255,210,150,0.3); cursor:pointer;
-      border:none; transition:background 0.25s, transform 0.25s;
-    }
-    .slider-dot.active { background:#B87C4E; transform:scale(1.4); }
+.hero-image-strip img {
+  width:100%;
+  height:100%;
+  object-fit:cover; /* FIX */
+}
 
-    /* thumbnail strip */
-    .thumb-strip {
-      display:flex; gap:8px; margin-top:10px;
-      overflow-x:auto; padding-bottom:4px;
-      scrollbar-width:none;
-    }
-    .thumb-strip::-webkit-scrollbar { display:none; }
-    .thumb {
-      flex-shrink:0; width:72px; height:52px;
-      border-radius:8px; overflow:hidden; cursor:pointer;
-      border:2px solid transparent;
-      transition:border-color 0.2s, opacity 0.2s;
-      opacity:0.55;
-    }
-    .thumb img { width:100%; height:100%; object-fit:cover; display:block; }
-    .thumb.active { border-color:#B87C4E; opacity:1; }
+/* PRODUCTS */
+.products-grid {
+  display:flex;
+  flex-wrap:wrap;
+  gap:2rem;
+  justify-content:center;
+}
 
-    /* MISSION */
-    .mission {
-      background:#EFE2D4; border-radius:48px; margin:4rem 0; padding:3rem 2.5rem;
-      box-shadow:inset 0 1px 4px rgba(255,255,240,0.8),0 12px 20px rgba(0,0,0,0.02);
-    }
-    .mission h3 { font-size:1.9rem; font-weight:600; color:#3E2A1C; margin-bottom:1.5rem; }
-    .mission p  { font-size:1.1rem; line-height:1.6; color:#2F241C; max-width:85%; }
+/* WOOD SECTION */
+.wood-section {
+  background:linear-gradient(160deg,#2E1C10,#6B4226);
+  border-radius:36px;
+  padding:2.8rem;
+  margin:2rem 0;
+  overflow:hidden; /* CRITICAL */
+}
 
-    /* CONTACT */
-    .contact-section {
-      display:flex; flex-wrap:wrap; gap:3rem; margin:3rem 0 4rem;
-      background:#FCF5EA; border-radius:40px; padding:2rem;
-    }
-    .contact-info { flex:1.2; }
-    .contact-info h3, .locations h3 { font-size:1.6rem; font-weight:600; color:#4A3322; margin-bottom:1rem; }
-    .contact-detail { margin:1.2rem 0; }
-    .contact-detail p { margin:0.5rem 0; display:flex; align-items:center; gap:12px; font-size:1rem; color:#2F241C; word-break:break-word; }
-    .contact-icon { font-size:1.3rem; min-width:32px; }
-    .email-group { display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:0.3rem; }
-    .email-badge { background:#EADCCE; padding:0.3rem 1rem; border-radius:60px; font-size:0.85rem; font-weight:500; color:#4E3625; }
-    .locations { flex:1; }
-    .location-grid { display:flex; flex-wrap:wrap; gap:1rem; margin-top:0.8rem; }
-    .loc-item { background:#EBDDCFFF; padding:0.5rem 1.2rem; border-radius:60px; font-weight:500; font-size:0.9rem; }
+/* SLIDER */
+.slider-wrap {
+  position:relative;
+  border-radius:20px;
+  overflow:hidden; /* CRITICAL FIX */
+}
 
-    /* FOOTER */
-    .footer { background:#3C2A1E; color:#EADBCE; padding:2rem 0; border-radius:32px 32px 0 0; margin-top:2rem; }
-    .footer-inner { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; }
-    .footer p   { font-size:0.9rem; opacity:0.85; }
-    .footer small { font-size:0.8rem; }
+.slider-track {
+  display:flex;
+  width:100%;
+  transition:0.4s;
+}
 
-    /* RESPONSIVE */
-    @media (max-width: 760px) {
-      .container { padding:0 20px; }
-      .nav { flex-direction:column; }
-      .hero h2 { font-size:2.2rem; }
-      .mission p { max-width:100%; }
-      .contact-section { flex-direction:column; }
-      .section-title:after { width:40%; }
-      .hero-image-strip { grid-template-columns:1fr; height:auto; }
-      .hero-image-strip img { height:180px; }
-      .wood-section { padding:1.8rem 1.4rem; border-radius:24px; }
-      .wood-header { flex-direction:column; gap:0.8rem; }
-      .slide { height:240px; }
-      .wood-header h3 { font-size:1.3rem; }
-    }
+.slide {
+  min-width:100%;
+  height:420px;
+  flex-shrink:0;
+  overflow:hidden; /* CRITICAL */
+}
 
-    button, a { cursor:pointer; }
-    hr { border:none; height:1px; background:linear-gradient(90deg,#DCCBB8,transparent); margin:1rem 0; }
-  </style>
+.slide img {
+  width:100%;
+  height:100%;
+  object-fit:cover; /* FIX STRETCH */
+}
+
+/* BUTTONS */
+.slider-btn {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:rgba(0,0,0,0.5);
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+.prev { left:10px; }
+.next { right:10px; }
+
+</style>
 </head>
+
 <body>
 
-  <header class="header">
-    <div class="container">
-      <div class="nav">
-        <div class="logo">
-          <h1>GKM Afrika Trading</h1>
-          <p>roots of excellence · heart of congo</p>
-        </div>
-        <ul class="nav-links">
-          <li><a href="#products">Treasures</a></li>
-          <li><a href="#wood">Wood for Sale</a></li>
-          <li><a href="#mission">Mission</a></li>
-          <li><a href="#contact">Connect</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
+<header class="header">
+<div class="container">
+<div class="nav">
 
-  <main>
-    <div class="container">
+<h2>GKM Afrika Trading</h2>
 
-      <!-- Hero -->
-      <div class="hero">
-        <h2>Export African Craft & Culture<br>where heritage meets global trade</h2>
-        <p>Premium African hardwoods · Celebration-ready Bazin fabrics · Fresh tropical harvests</p>
-        <div class="hero-accent"></div>
-      </div>
+<ul class="nav-links">
+<li><a href="#products">Treasures</a></li>
+<li><a href="#wood">Sales</a></li>
+<li><a href="#mission">Mission</a></li>
+<li><a href="#contact">Connect</a></li>
+</ul>
 
-      <!-- Hero strip: A B C -->
-      <div class="hero-image-strip">
-        <img src="A.jpg" alt="African craft export">
-        <img src="B.jpg" alt="African heritage goods">
-        <img src="C.jpg" alt="Congo exports">
-      </div>
+</div>
+</div>
+</header>
 
-      <!-- Product cards -->
-      <div id="products">
-        <span class="section-title">Our exports · pure origin</span>
-        <div class="products-grid">
-          <div class="product-card">
-            <div class="icon-emblem">👘✨</div>
-            <h3>African Clothes</h3>
-            <p><strong>Bazin (1st Quality)</strong> from West Africa. Celebration-ready fabrics rooted in culture. Rich textures, vibrant symbolism, authentic craftsmanship.</p>
-            <div class="origin-tag">🇨🇩🇳🇬 West Africa heritage</div>
-          </div>
-          <div class="product-card">
-            <div class="icon-emblem">🌳🔨</div>
-            <h3>Premium Hardwoods</h3>
-            <p><strong>Tola, Kambala, Wenge, Red & Black Wood</strong> from D.R. Congo. Sourced responsibly — timeless elegance for furniture, sculpture & architecture.</p>
-            <div class="origin-tag">🇨🇩 Democratic Republic of Congo</div>
-          </div>
-          <div class="product-card">
-            <div class="icon-emblem">🍍🥭🍌</div>
-            <h3>Tropical Fruits</h3>
-            <p><strong>Pineapples, Mangoes, Plantain & more.</strong> Fresh, seasonal, responsibly sourced. Sun-ripened flavors delivered with integrity.</p>
-            <div class="origin-tag">🌍 fresh from Congolese soil</div>
-          </div>
-        </div>
-      </div>
+<main class="container">
 
-      <!-- ══ WOOD FOR SALE ══ -->
-      <div id="wood" class="wood-section">
+<!-- HERO -->
+<div class="hero">
+<h2>Export African Craft & Culture</h2>
+</div>
 
-        <div class="wood-header">
-          <span class="wood-header-icon">🪵</span>
-          <div>
-            <p class="wood-label">Now Available · Direct Purchase</p>
-            <h3>We Are Selling Premium Wood Pieces</h3>
-            <p>
-              We currently have a hand-selected collection of authentic African hardwood pieces available for
-              direct purchase — including <strong>Tola, Kambala, Wenge, Red Wood and Black Wood</strong>,
-              all sourced directly from the Democratic Republic of Congo. Ideal for furniture makers, sculptors,
-              architects, and serious collectors. Browse the pieces below and reach out if anything interests you.
-            </p>
-            <a href="#contact" class="wood-cta">📩 Enquire about a piece</a>
-          </div>
-        </div>
+<!-- HERO IMAGES -->
+<div class="hero-image-strip">
+<img src="images/A.jpg">
+<img src="images/B.jpg">
+<img src="images/C.jpg">
+</div>
 
-        <!-- Slider: D E F G H I J K -->
-        <div class="slider-wrap" id="sliderWrap">
-          <div class="slider-track" id="sliderTrack">
-            <div class="slide"><img src="D.jpg" alt="Wood piece D"><span class="slide-counter" id="slideCounter">1 / 8</span></div>
-            <div class="slide"><img src="E.jpg" alt="Wood piece E"></div>
-            <div class="slide"><img src="F.jpg" alt="Wood piece F"></div>
-            <div class="slide"><img src="G.jpg" alt="Wood piece G"></div>
-            <div class="slide"><img src="H.jpg" alt="Wood piece H"></div>
-            <div class="slide"><img src="I.jpg" alt="Wood piece I"></div>
-            <div class="slide"><img src="J.jpg" alt="Wood piece J"></div>
-            <div class="slide"><img src="K.jpg" alt="Wood piece K"></div>
-          </div>
-          <button class="slider-btn prev" id="prevBtn" aria-label="Previous">&#8592;</button>
-          <button class="slider-btn next" id="nextBtn" aria-label="Next">&#8594;</button>
-        </div>
+<!-- PRODUCTS -->
+<div id="products">
+<div class="products-grid">
+<div>Clothing</div>
+<div>Wood</div>
+<div>Fruits</div>
+</div>
+</div>
 
-        <!-- Dots -->
-        <div class="slider-dots" id="sliderDots"></div>
+<!-- WOOD SECTION -->
+<div id="wood" class="wood-section">
 
-        <!-- Thumbnails -->
-        <div class="thumb-strip" id="thumbStrip">
-          <div class="thumb active" data-idx="0"><img src="D.jpg" alt="D"></div>
-          <div class="thumb" data-idx="1"><img src="E.jpg" alt="E"></div>
-          <div class="thumb" data-idx="2"><img src="F.jpg" alt="F"></div>
-          <div class="thumb" data-idx="3"><img src="G.jpg" alt="G"></div>
-          <div class="thumb" data-idx="4"><img src="H.jpg" alt="H"></div>
-          <div class="thumb" data-idx="5"><img src="I.jpg" alt="I"></div>
-          <div class="thumb" data-idx="6"><img src="J.jpg" alt="J"></div>
-          <div class="thumb" data-idx="7"><img src="K.jpg" alt="K"></div>
-        </div>
+<h2 style="color:#fff;">Wood for Sale</h2>
 
-      </div><!-- /wood-section -->
+<div class="slider-wrap">
+<div class="slider-track" id="track">
 
-      <!-- Mission -->
-      <div id="mission" class="mission">
-        <h3>🌍 Our reason for being</h3>
-        <p>Our reason for being is not only to conduct business and benefit from it, but also to bring together business people from all corners of the world with the Democratic Republic of Congo, our mother nation, for joint business and mutual investment projects. The outcomes of these connections will also help develop our businesses, enabling us to support those who reach out to us, especially the most vulnerable people living in the most remote areas, by providing them with our assistance.</p>
-      </div>
+<div class="slide"><img src="images/D.jpg"></div>
+<div class="slide"><img src="images/E.jpg"></div>
+<div class="slide"><img src="images/F.jpg"></div>
+<div class="slide"><img src="images/G.jpg"></div>
+<div class="slide"><img src="images/H.jpg"></div>
+<div class="slide"><img src="images/I.jpg"></div>
+<div class="slide"><img src="images/J.jpg"></div>
+<div class="slide"><img src="images/K.jpg"></div>
 
-      <!-- Contact -->
-      <div id="contact" class="contact-section">
-        <div class="contact-info">
-          <h3>📞 Connect with us</h3>
-          <div class="contact-detail">
-            <p><span class="contact-icon">📱</span> Phone: <strong>+27 72 276 5899</strong></p>
-            <p><span class="contact-icon">✉️</span> Email:</p>
-            <div class="email-group">
-              <span class="email-badge">gkmafrikat@outlook.com</span>
-              <span class="email-badge">info@gkmtrading.com</span>
-              <span class="email-badge">mamuessa@gmail.com</span>
-            </div>
-          </div>
-        </div>
-        <div class="locations">
-          <h3>📍 Our presence</h3>
-          <div class="location-grid">
-            <span class="loc-item">🇿🇦 Cape Town</span>
-            <span class="loc-item">🌍 West Africa</span>
-            <span class="loc-item">🇨🇩 D.R. Congo</span>
-            <span class="loc-item">🤝 Global Partners</span>
-          </div>
-          <p style="margin-top:1.2rem;font-size:0.85rem;color:#5E4A38;">Bridging continents — rooted in Congo, serving the world.</p>
-        </div>
-      </div>
+</div>
 
-    </div>
-  </main>
+<button class="slider-btn prev" onclick="move(-1)">‹</button>
+<button class="slider-btn next" onclick="move(1)">›</button>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>🌿 GKM Afrika Trading — Export African Craft & Culture</p>
-      <small>GKM Afrika Trading @ 2025 - Powered by SweetBiscuit44</small>
-    </div>
-  </footer>
+</div>
+</div>
 
-  <script>
-    const TOTAL   = 8;
-    let   current = 0;
-    let   autoTimer;
+<!-- CONTACT -->
+<div id="contact">
+<h2>Contact</h2>
+<p>+27 72 276 5899</p>
+</div>
 
-    const track   = document.getElementById('sliderTrack');
-    const counter = document.getElementById('slideCounter');
-    const dotsEl  = document.getElementById('sliderDots');
-    const thumbs  = document.querySelectorAll('.thumb');
-    const wrap    = document.getElementById('sliderWrap');
+</main>
 
-    // Build dots
-    for (let i = 0; i < TOTAL; i++) {
-      const d = document.createElement('button');
-      d.className = 'slider-dot' + (i === 0 ? ' active' : '');
-      d.setAttribute('aria-label', 'Slide ' + (i + 1));
-      d.addEventListener('click', () => goTo(i));
-      dotsEl.appendChild(d);
-    }
-    const dots = dotsEl.querySelectorAll('.slider-dot');
+<script>
+let index = 0;
+const track = document.getElementById("track");
+const total = 8;
 
-    function goTo(n) {
-      current = ((n % TOTAL) + TOTAL) % TOTAL;
-      track.style.transform = `translateX(-${current * 100}%)`;
-      counter.textContent   = `${current + 1} / ${TOTAL}`;
-      dots.forEach((d, i)   => d.classList.toggle('active', i === current));
-      thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
-      thumbs[current].scrollIntoView({ behavior:'smooth', inline:'center', block:'nearest' });
-    }
-
-    document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
-    document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
-    thumbs.forEach(t => t.addEventListener('click', () => goTo(+t.dataset.idx)));
-
-    // Keyboard
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft')  goTo(current - 1);
-      if (e.key === 'ArrowRight') goTo(current + 1);
-    });
-
-    // Touch swipe
-    let tx = 0;
-    track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
-    track.addEventListener('touchend',   e => {
-      const diff = tx - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
-    });
-
-    // Auto-advance every 5s, pause on hover
-    function startAuto() { autoTimer = setInterval(() => goTo(current + 1), 5000); }
-    function stopAuto()  { clearInterval(autoTimer); }
-    startAuto();
-    wrap.addEventListener('mouseenter', stopAuto);
-    wrap.addEventListener('mouseleave', startAuto);
-  </script>
+function move(dir){
+  index += dir;
+  if(index < 0) index = total-1;
+  if(index >= total) index = 0;
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+</script>
 
 </body>
 </html>
