@@ -2,115 +2,79 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-<title>GKM Afrika Trading | African Craft & Culture Exports</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GKM Afrika Trading</title>
 
 <style>
-
-/* GLOBAL FIXES */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-  font-family:'Inter', sans-serif;
+  font-family: Arial, sans-serif;
   background:#FCF7EF;
-  color:#2C221B;
-  overflow-x:hidden; /* PREVENT BLEED */
 }
 
-img {
-  display:block;
-  max-width:100%;
-}
-
-/* HEADER */
+/* NAV */
 .header {
-  background:rgba(254,249,240,0.96);
-  border-bottom:1px solid #EADBCE;
-  padding:1rem 0;
-  position:sticky;
-  top:0;
-  z-index:50;
+  background:#fff;
+  padding:15px;
+  border-bottom:1px solid #ddd;
 }
 
-.container { max-width:1280px; margin:auto; padding:0 32px; }
-
-.nav { display:flex; justify-content:space-between; align-items:center; }
-
-.nav-links {
-  list-style:none;
+.nav {
   display:flex;
-  gap:2rem;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.nav-links a {
+.nav a {
+  margin-left:20px;
   text-decoration:none;
-  color:#4A3729;
-  font-weight:500;
+  font-weight:bold;
+  color:#333;
+  cursor:pointer;
 }
 
-/* HERO */
+/* SECTIONS */
+.section {
+  display:none;
+  padding:60px 20px;
+}
+
+.section.active {
+  display:block;
+}
+
+/* HOME */
 .hero {
-  padding:4rem 0 2rem;
   text-align:center;
+  padding:100px 20px;
 }
 
-.hero h2 { font-size:3rem; }
-
-/* HERO IMAGES */
-.hero-image-strip {
-  display:grid;
-  grid-template-columns:1.4fr 1fr 1fr;
-  gap:12px;
-  margin:2rem 0 3rem;
-  border-radius:24px;
-  overflow:hidden;
-  height:340px;
-}
-
-.hero-image-strip img {
-  width:100%;
-  height:100%;
-  object-fit:cover; /* FIX */
-}
-
-/* PRODUCTS */
-.products-grid {
-  display:flex;
-  flex-wrap:wrap;
-  gap:2rem;
-  justify-content:center;
-}
-
-/* WOOD SECTION */
-.wood-section {
-  background:linear-gradient(160deg,#2E1C10,#6B4226);
-  border-radius:36px;
-  padding:2.8rem;
-  margin:2rem 0;
-  overflow:hidden; /* CRITICAL */
+/* SALES */
+.sales {
+  background:#2e1c10;
+  color:white;
+  min-height:100vh;
 }
 
 /* SLIDER */
-.slider-wrap {
+.slider {
+  max-width:900px;
+  margin:40px auto;
+  overflow:hidden;
+  border-radius:16px;
   position:relative;
-  border-radius:20px;
-  overflow:hidden; /* CRITICAL FIX */
 }
 
-.slider-track {
+.track {
   display:flex;
-  width:100%;
   transition:0.4s;
 }
 
 .slide {
   min-width:100%;
-  height:420px;
-  flex-shrink:0;
-  overflow:hidden; /* CRITICAL */
+  height:400px;
+  overflow:hidden;
 }
 
 .slide img {
@@ -120,111 +84,103 @@ img {
 }
 
 /* BUTTONS */
-.slider-btn {
+button {
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  width:46px;
-  height:46px;
-  border-radius:50%;
-  background:rgba(0,0,0,0.5);
+  background:#0008;
   color:white;
   border:none;
+  padding:10px;
   cursor:pointer;
 }
 
 .prev { left:10px; }
 .next { right:10px; }
 
+/* CONTACT */
+.contact {
+  padding:50px;
+}
 </style>
 </head>
 
 <body>
 
-<header class="header">
-<div class="container">
-<div class="nav">
-
-<h2>GKM Afrika Trading</h2>
-
-<ul class="nav-links">
-<li><a href="#products">Treasures</a></li>
-<li><a href="#wood">Sales</a></li>
-<li><a href="#mission">Mission</a></li>
-<li><a href="#contact">Connect</a></li>
-</ul>
-
-</div>
-</div>
-</header>
-
-<main class="container">
-
-<!-- HERO -->
-<div class="hero">
-<h2>Export African Craft & Culture</h2>
+<!-- NAV -->
+<div class="header">
+  <div class="nav">
+    <h2>GKM Afrika</h2>
+    <div>
+      <a onclick="showSection('home')">Home</a>
+      <a onclick="showSection('sales')">Sales</a>
+      <a onclick="showSection('contact')">Contact Us</a>
+    </div>
+  </div>
 </div>
 
-<!-- HERO IMAGES -->
-<div class="hero-image-strip">
-<img src="images/A.jpg">
-<img src="images/B.jpg">
-<img src="images/C.jpg">
+<!-- HOME -->
+<div id="home" class="section active">
+  <div class="hero">
+    <h1>Export African Craft & Culture</h1>
+    <p>Premium hardwoods • Authentic fabrics • Tropical produce</p>
+  </div>
 </div>
 
-<!-- PRODUCTS -->
-<div id="products">
-<div class="products-grid">
-<div>Clothing</div>
-<div>Wood</div>
-<div>Fruits</div>
-</div>
-</div>
+<!-- SALES -->
+<div id="sales" class="section sales">
 
-<!-- WOOD SECTION -->
-<div id="wood" class="wood-section">
+  <h2 style="text-align:center;">Wood for Sale</h2>
 
-<h2 style="color:#fff;">Wood for Sale</h2>
+  <div class="slider">
+    <div class="track" id="track">
 
-<div class="slider-wrap">
-<div class="slider-track" id="track">
+      <div class="slide"><img src="images/D.jpg"></div>
+      <div class="slide"><img src="images/E.jpg"></div>
+      <div class="slide"><img src="images/F.jpg"></div>
+      <div class="slide"><img src="images/G.jpg"></div>
+      <div class="slide"><img src="images/H.jpg"></div>
+      <div class="slide"><img src="images/I.jpg"></div>
+      <div class="slide"><img src="images/J.jpg"></div>
+      <div class="slide"><img src="images/K.jpg"></div>
 
-<div class="slide"><img src="images/D.jpg"></div>
-<div class="slide"><img src="images/E.jpg"></div>
-<div class="slide"><img src="images/F.jpg"></div>
-<div class="slide"><img src="images/G.jpg"></div>
-<div class="slide"><img src="images/H.jpg"></div>
-<div class="slide"><img src="images/I.jpg"></div>
-<div class="slide"><img src="images/J.jpg"></div>
-<div class="slide"><img src="images/K.jpg"></div>
+    </div>
 
-</div>
+    <button class="prev" onclick="move(-1)">‹</button>
+    <button class="next" onclick="move(1)">›</button>
+  </div>
 
-<button class="slider-btn prev" onclick="move(-1)">‹</button>
-<button class="slider-btn next" onclick="move(1)">›</button>
-
-</div>
 </div>
 
 <!-- CONTACT -->
-<div id="contact">
-<h2>Contact</h2>
-<p>+27 72 276 5899</p>
+<div id="contact" class="section contact">
+  <h2>Contact Us</h2>
+  <p>Phone: +27 72 276 5899</p>
+  <p>Email: info@gkmtrading.com</p>
 </div>
 
-</main>
-
 <script>
+
+/* PAGE SWITCH */
+function showSection(id){
+  document.querySelectorAll('.section').forEach(sec => {
+    sec.classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
+}
+
+/* SLIDER (MANUAL ONLY) */
 let index = 0;
 const track = document.getElementById("track");
 const total = 8;
 
 function move(dir){
   index += dir;
-  if(index < 0) index = total-1;
+  if(index < 0) index = total - 1;
   if(index >= total) index = 0;
   track.style.transform = `translateX(-${index * 100}%)`;
 }
+
 </script>
 
 </body>
